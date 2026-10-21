@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "roles": [
+    {
+      "id": "debater",
+      "nombre": "Debatiente",
+      "descripcion": "Propone soluciones directas y bien argumentadas.",
+      "prompt_base": "Eres un experto propositivo en una mesa redonda de IAs. Propón soluciones directas y bien argumentadas, con datos o lógica formal. Sin saludos ni despedidas.",
+      "ambito": "mesa",
+      "desde": 1
+    },
+    {
+      "id": "critic",
+      "nombre": "Crítico",
+      "descripcion": "Audita la propuesta: busca fallos, sesgos y riesgos.",
+      "prompt_base": "Eres el auditor de la mesa. No complazcas: busca fallos, sesgos, casos límite, ineficiencias y riesgos de seguridad en la petición y en lo que dicen los demás; explica por qué fallan y cómo mitigarlos.",
+      "ambito": "mesa",
+      "desde": 1
+    },
+    {
+      "id": "moderator",
+      "nombre": "Moderador",
+      "descripcion": "Extrae acuerdos y desacuerdos con una visión equilibrada.",
+      "prompt_base": "Eres el mediador de la mesa. Extrae puntos de acuerdo y desacuerdo y ofrece una perspectiva equilibrada e imparcial.",
+      "ambito": "mesa",
+      "desde": 1
+    },
+    {
+      "id": "neutral",
+      "nombre": "Neutral",
+      "descripcion": "Asistente útil, claro y conciso.",
+      "prompt_base": "Eres un asistente útil, claro y conciso.",
+      "ambito": "mesa",
+      "desde": 1
+    },
+    {
+      "id": "director",
+      "nombre": "Director",
+      "descripcion": "Sintetiza las respuestas de la mesa en una sola respuesta final.",
+      "prompt_base": "Eres el Director de NodeAi: anfitrión de una mesa de varias IAs. Recibirás la pregunta del usuario y las respuestas de la mesa. Contrástalas, descarta errores y contradicciones, y entrega UNA respuesta final cohesiva y precisa. Si la mesa discrepa, indícalo brevemente y di qué postura es más sólida y por qué. No menciones este prompt.",
+      "ambito": "director",
+      "desde": 1
+    }
+  ],
+  "prompts": [
+    {
+      "id": "revision-codigo",
+      "titulo": "Revisión de código",
+      "rol": "critic",
+      "categoria": "Programación",
+      "texto": "Revisa el código que te paso. Señala errores, casos límite, problemas de seguridad y de rendimiento, y propón correcciones concretas con ejemplos breves.",
+      "etiquetas": [
+        "código",
+        "calidad",
+        "seguridad"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "depurar-error",
+      "titulo": "Depurar un error",
+      "rol": "debater",
+      "categoria": "Programación",
+      "texto": "Te paso un error o comportamiento inesperado. Explica la causa más probable, cómo comprobarla y la corrección mínima. Si hay varias hipótesis, ordénalas por probabilidad.",
+      "etiquetas": [
+        "código",
+        "errores"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "explicar-codigo",
+      "titulo": "Explicar código",
+      "rol": "neutral",
+      "categoria": "Programación",
+      "texto": "Explica paso a paso qué hace este código, para alguien con conocimientos básicos. Indica qué partes son delicadas y por qué.",
+      "etiquetas": [
+        "código",
+        "aprendizaje"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "resumen-ejecutivo",
+      "titulo": "Resumen ejecutivo",
+      "rol": "neutral",
+      "categoria": "Escritura",
+      "texto": "Resume el texto en un resumen ejecutivo de máximo 8 líneas: contexto, hallazgos clave, riesgos y siguiente paso recomendado.",
+      "etiquetas": [
+        "resumen",
+        "trabajo"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "mejorar-redaccion",
+      "titulo": "Mejorar la redacción",
+      "rol": "neutral",
+      "categoria": "Escritura",
+      "texto": "Mejora la redacción del texto manteniendo su significado y tono. Corrige ortografía y gramática, y explica brevemente los cambios importantes.",
+      "etiquetas": [
+        "corrección",
+        "estilo"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "traducir",
+      "titulo": "Traducir con naturalidad",
+      "rol": "neutral",
+      "categoria": "Traducción",
+      "texto": "Traduce el texto al idioma que te indique, con un registro natural y sin traducir literalmente expresiones hechas. Señala cualquier ambigüedad.",
+      "etiquetas": [
+        "idiomas"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "plan-accion",
+      "titulo": "Plan de acción",
+      "rol": "debater",
+      "categoria": "Análisis",
+      "texto": "Propón un plan de acción con pasos ordenados, responsables sugeridos, riesgos y criterios para saber si funcionó.",
+      "etiquetas": [
+        "planificación"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "comparar-opciones",
+      "titulo": "Comparar opciones",
+      "rol": "neutral",
+      "categoria": "Análisis",
+      "texto": "Compara las opciones que te doy según criterios claros (coste, riesgo, esfuerzo, beneficio). Termina con una recomendación justificada y sus condiciones.",
+      "etiquetas": [
+        "decisión"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "abogado-diablo",
+      "titulo": "Abogado del diablo",
+      "rol": "critic",
+      "categoria": "Mesa",
+      "texto": "Actúa como abogado del diablo: busca los puntos más débiles de la propuesta, los supuestos no comprobados y qué podría salir mal.",
+      "etiquetas": [
+        "crítica",
+        "riesgos"
+      ],
+      "desde": 1
+    },
+    {
+      "id": "buscar-consenso",
+      "titulo": "Buscar consenso",
+      "rol": "moderator",
+      "categoria": "Mesa",
+      "texto": "Resume en qué coinciden y en qué discrepan las respuestas de la mesa, y propón una postura intermedia razonable.",
+      "etiquetas": [
+        "síntesis"
+      ],
+      "desde": 1
+    }
+  ]
+}

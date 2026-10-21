@@ -1,0 +1,16 @@
+# NodeAi — dependencias base (Python 3.10+; probado con 3.12)
+flet>=1.0,<2
+aiohttp>=3.9
+psutil>=5.9
+PyMuPDF>=1.24                 # lectura de PDF
+opencv-python-headless>=4.8   # imágenes / video (opcional: sin él se adjuntan sin redimensionar y no hay video)
+
+# Modo agente (control del PC). El núcleo (src/agent) NO usa Flet: también funciona por consola.
+mss>=9.0                      # captura de pantalla
+pyautogui>=0.9.54             # ratón y teclado
+pyperclip>=1.8                # escribir acentos/ñ/texto largo (vía portapapeles)
+Pillow>=10.0                  # redimensionar/dibujar la captura
+# (Linux: además `sudo apt install python3-tk python3-xlib xclip`)
+
+# Motor local GGUF (OPCIONAL, se instala aparte según tu hardware; ver README):
+#   llama-cpp-python
